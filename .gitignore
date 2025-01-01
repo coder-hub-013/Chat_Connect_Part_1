@@ -1,0 +1,5 @@
+.env
+node_modules/
+try.html
+main.js
+socket.js
