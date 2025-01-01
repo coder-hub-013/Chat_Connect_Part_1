@@ -66,7 +66,7 @@ main()
     })
 
 async function main() {
-    await mongoose.connect(Mongo_URL);
+    await mongoose.connect(dbUrl);
 }
 //routes
 
