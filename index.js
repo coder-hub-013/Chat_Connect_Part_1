@@ -99,7 +99,7 @@ app.post('/router/signup',async (req,res) => {
                     secure: true, 
                     httpOnly : true, 
                     sameSite: 'none',
-                    maxAge:3600000
+                    // maxAge:3600000
                 });
                 // console.log(newUser);  
                 res.status(200).json({message:"Sign up successfullly", token, user: {id:savedUser._id, email:savedUser.email,username:savedUser.username}});
@@ -137,7 +137,7 @@ app.post('/router/login',async (req,res) => {
                     sameSite:'none',
                     // sameSite:'strict',
                     // expires : 3600000
-                    maxAge:3600000
+                    // maxAge:3600000
                 });  
                 res.status(200).json({message:"Login Successfully", token, user: {id:userExist._id, email:userExist.email,username:userExist.username}});
     
@@ -159,8 +159,8 @@ app.post("/router/logout",(req,res) => {
     const removedCookie = res.clearCookie('jwt', {
                             secure: true,          
                             httpOnly: true,        
-                            // sameSite: 'none',      
-                            maxAge: 0             
+                            sameSite: 'none',      
+                            // maxAge: 0             
                         });
     // console.log("/router/logout",removedCookie);
     if(removedCookie) {
